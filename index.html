@@ -189,8 +189,8 @@ backdrop-filter: blur(8px);
   object-fit: cover;
   z-index: 5;
   /* dark fade on right edge into centre */
-  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(90deg, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(90deg, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
 }
 
 /* RIGHT image — TEST.jpg */
@@ -199,12 +199,11 @@ backdrop-filter: blur(8px);
   right: 0;
   top: 0; bottom: 0;
   height: 100%;
-  width: 33%;          /* was: width: auto;  — wider so it reaches further left */
+  width: auto;
   object-fit: cover;
-  object-position: right center;
   z-index: 5;
-  -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(270deg, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(270deg, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
 }
 
 /* ── HERO TEXT ── */
@@ -284,6 +283,10 @@ backdrop-filter: blur(8px);
     padding: 36px 16px 30px;
     min-height: auto;
   }
+  .hero-img-left,
+  .hero-img-right {
+    display: none;
+  }
 }
 
 .competitor-strip { background: var(--bg-panel); border-bottom: 1px solid var(--border); padding: 0; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
@@ -312,7 +315,6 @@ backdrop-filter: blur(8px);
 .competitor-tab.trap-tab::after { content: '●'; position: absolute; top: 6px; right: 6px; font-size: 5px; color: var(--gold-dim); opacity: 0.6; }
 
 .main { display: grid; grid-template-columns: 1fr 320px; gap: 0; min-height: calc(100vh - 180px); }
-@media (max-width: 900px) { .main { grid-template-columns: 1fr; } }
 .arena { border-right: 1px solid var(--border); padding: 0; }
 .arena-header { padding: 20px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
 .arena-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary); }
@@ -553,11 +555,9 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
   <div class="hero-glow"></div>
   <img class="hero-img-left" src="JOYISCOMING.jpg" alt="Joy Is Coming">
   <img class="hero-img-right" src="test.jpg" alt="TEST">
-  <!-- TEMP: hero text hidden — to restore, uncomment the 3 lines below -->
-  <!-- <div class="hero-eyebrow">Season 01 — Active Now</div> -->
-  <!-- <h1>Make Money<br>Making Movies</h1> -->
-  <!-- <div class="hero-sub">Earn Your Sponsorship. Build Your Car. Find Your Engine.</div> -->
-
+  <div class="hero-eyebrow">Season 01 — Active Now</div>
+  <h1>Make Money<br>Making Movies</h1>
+  <div class="hero-sub">Earn Your Sponsorship. Build Your Car. Find Your Engine.</div>
 </div>
 
 <div class="competitor-strip">
@@ -643,7 +643,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 
 <div class="film-card">
 <div class="film-thumb thumb-seedance" style="padding:0;overflow:hidden;">
-<video class="neon-drift-video" src="bestneonsignsvid.mp4" autoplay muted loop playsinline></video>
+<video class="neon-drift-video" src="videos/bestneonsignsvid.mp4" autoplay muted loop playsinline></video>
 <div class="film-rank">#2</div>
 <div class="film-engine-label label-b">Seedance 2.0</div>
 </div>
@@ -659,7 +659,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 
 <div class="film-card">
 <div class="film-thumb thumb-higgsfield" style="padding:0;overflow:hidden;">
-<video class="neon-drift-video" src="storagelocker.mp4" autoplay muted loop playsinline></video>
+<video class="neon-drift-video" src="videos/storagelocker.mp4" autoplay muted loop playsinline></video>
 <div class="film-rank">#1</div>
 <div class="film-engine-label label-a">Higgsfield Soul</div>
 </div>
@@ -675,7 +675,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 
 <div class="film-card">
 <div class="film-thumb thumb-yapper" style="padding:0;overflow:hidden;">
-<video class="neon-drift-video" src="battle_promt_kling.mp4" autoplay muted loop playsinline></video>
+<video class="neon-drift-video" src="videos/battle_promt_kling.mp4" autoplay muted loop playsinline></video>
 <div class="film-rank">#3</div>
 <div class="film-engine-label label-d">Kling 3.0</div>
 </div>
@@ -698,7 +698,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 </div>
 <video 
   id="introVideo"
-  src="employeevidintrotheone.mp4" 
+  src="videos/employeevidintrotheone.mp4" 
   width="100%" 
   style="border-radius: 4px; cursor: pointer;"
   autoplay
@@ -1156,25 +1156,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-
-<!-- ============= VIDEOS SECTION ============= -->
-<section style="padding:48px 24px; border-top:1px solid var(--border); background:var(--bg-panel);">
-  <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:28px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:24px; text-align:center;">Videos</h2>
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px; max-width:1400px; margin:0 auto;">
-    <video controls preload="metadata" style="width:100%; height:auto; border:1px solid var(--border-gold); background:#000; border-radius:4px;">
-      <source src="/videos/storagelocker.mp4" type="video/mp4">
-    </video>
-    <video controls preload="metadata" style="width:100%; height:auto; border:1px solid var(--border-gold); background:#000; border-radius:4px;">
-      <source src="/videos/battle_promt_kling.mp4" type="video/mp4">
-    </video>
-    <video controls preload="metadata" style="width:100%; height:auto; border:1px solid var(--border-gold); background:#000; border-radius:4px;">
-      <source src="/videos/bestneonsignsvid.mp4" type="video/mp4">
-    </video>
-    <video controls preload="metadata" style="width:100%; height:auto; border:1px solid var(--border-gold); background:#000; border-radius:4px;">
-      <source src="/videos/employeevidintrotheone.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
-
 </body>
 </html>
