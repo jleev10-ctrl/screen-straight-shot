@@ -278,15 +278,46 @@ backdrop-filter: blur(8px);
   }
 }
 
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .arena {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar { width: 100%; }
+  .film-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
 @media (max-width: 640px) {
   .hero {
     padding: 36px 16px 30px;
     min-height: auto;
   }
   .hero-img-left,
-  .hero-img-right {
-    display: none;
+  .hero-img-right { display: none; }
+  .film-grid {
+    grid-template-columns: 1fr !important;
   }
+  .arena-header,
+  .arena-footer,
+  .sidebar-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .memo-paper,
+  .dispatch-paper {
+    padding: 28px 20px !important;
+  }
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .competitor-strip { background: var(--bg-panel); border-bottom: 1px solid var(--border); padding: 0; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
