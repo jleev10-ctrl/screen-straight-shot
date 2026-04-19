@@ -381,10 +381,10 @@ backdrop-filter: blur(8px);
 
 .sidebar { background: var(--bg-panel); display: flex; flex-direction: column; }
 
-/* Employee intro video — full width everywhere, capped height on desktop */
+/* Employee intro video — full width on phone, narrower on desktop, whole frame visible */
 .intro-video { width: 100%; display: block; border-radius: 4px; cursor: pointer; }
 @media (min-width: 821px) {
-  .intro-video { max-height: 420px; object-fit: cover; object-position: center; }
+  .intro-video { max-width: 380px; margin: 24px auto; }
 }
 
 /* ── Mobile: stack everything cleanly for smooth scroll ── */
