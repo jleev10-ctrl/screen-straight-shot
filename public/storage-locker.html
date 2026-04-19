@@ -291,6 +291,16 @@ backdrop-filter: blur(8px);
   .film-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+  .arena-header,
+  .arena-footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .arena-header > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -309,10 +319,46 @@ backdrop-filter: blur(8px);
     padding-left: 14px;
     padding-right: 14px;
   }
+  .arena-header {
+    align-items: flex-start;
+  }
+  .arena-header > div:last-child,
+  .arena-footer {
+    width: 100%;
+    justify-content: flex-start;
+  }
   .memo-paper,
   .dispatch-paper {
     padding: 28px 20px !important;
   }
+  .vault-item {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .vault-left,
+  .lb-name {
+    min-width: 0;
+    flex: 1;
+  }
+  .vault-name,
+  .vault-id,
+  .lb-name {
+    word-break: break-word;
+  }
+  .vault-status {
+    margin-left: auto;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .google-preview-wrap {
+    padding: 16px 14px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -585,7 +631,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
   <div class="hero-film-bot"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <div class="hero-glow"></div>
   <img class="hero-img-left" src="JOYISCOMING.jpg" alt="Joy Is Coming">
-  <img class="hero-img-right" src="test.jpg" alt="TEST">
+  <img class="hero-img-right" src="test.jpg?v=2" alt="TEST">
   <div class="hero-eyebrow">Season 01 — Active Now</div>
   <h1>Make Money<br>Making Movies</h1>
   <div class="hero-sub">Earn Your Sponsorship. Build Your Car. Find Your Engine.</div>
@@ -1078,9 +1124,18 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 </footer>
 
 <script>
+function scrollToMain() {
+  var target = document.getElementById('arenaSection') || document.querySelector('.main');
+  if (target && target.scrollIntoView) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
 function goHome() {
 hideAll();
 document.getElementById('battleView').style.display = 'block';
+scrollToMain();
 document.getElementById('navArena').classList.add('active');
 document.getElementById('tabArena').classList.add('active');
 var n = document.getElementById('navManifesto'); if(n) n.classList.remove('active');
@@ -1113,6 +1168,7 @@ d.style.color='var(--text-dim)'; d.style.background='none'; d.style.borderBottom
 function showMemo() {
 hideAll();
 document.getElementById('manifestoView').style.display = 'block';
+scrollToMain();
 var b = document.getElementById('btnBattle'), m = document.getElementById('btnMemo'), d = document.getElementById('btnDispatch');
 m.style.color='var(--gold)'; m.style.background='rgba(201,168,76,0.08)'; m.style.borderBottom='2px solid var(--gold)';
 b.style.color='var(--text-dim)'; b.style.background='none'; b.style.borderBottom='2px solid transparent';
@@ -1121,6 +1177,7 @@ d.style.color='var(--text-dim)'; d.style.background='none'; d.style.borderBottom
 function showDispatch() {
 hideAll();
 document.getElementById('dispatchView').style.display = 'block';
+scrollToMain();
 var b = document.getElementById('btnBattle'), m = document.getElementById('btnMemo'), d = document.getElementById('btnDispatch');
 d.style.color='var(--gold)'; d.style.background='rgba(201,168,76,0.08)'; d.style.borderBottom='2px solid var(--gold)';
 b.style.color='var(--text-dim)'; b.style.background='none'; b.style.borderBottom='2px solid transparent';
@@ -1130,6 +1187,7 @@ function showEngineA(e) {
 if(e) e.preventDefault();
 hideAll();
 document.getElementById('engineAView').style.display = 'block';
+scrollToMain();
 document.getElementById('tabArena').classList.add('active');
 document.getElementById('navArena').classList.add('active');
 var n = document.getElementById('navManifesto'); if(n) n.classList.remove('active');
@@ -1139,6 +1197,7 @@ function showVaults(e) {
 if(e) e.preventDefault();
 hideAll();
 document.getElementById('vaultsView').style.display = 'block';
+scrollToMain();
 document.getElementById('navVaults').classList.add('active');
 document.getElementById('navArena').classList.remove('active');
 var n = document.getElementById('navManifesto'); if(n) n.classList.remove('active');
@@ -1147,6 +1206,7 @@ document.getElementById('tabArena').classList.remove('active');
 function showVaultDetail(id) {
 hideAll();
 document.getElementById('vaultDetail' + id).style.display = 'block';
+scrollToMain();
 document.getElementById('navVaults').classList.add('active');
 document.getElementById('navArena').classList.remove('active');
 var n = document.getElementById('navManifesto'); if(n) n.classList.remove('active');

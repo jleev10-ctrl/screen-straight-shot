@@ -1,9 +1,9 @@
 const Index = () => {
   return (
     <iframe
-      src="/storage-locker.html"
+      src="/storage-locker.html?v=3"
       title="Storage Locker Studios"
-      className="w-screen h-screen border-0 block"
+      className="block h-screen w-screen border-0"
     />
   );
 };
