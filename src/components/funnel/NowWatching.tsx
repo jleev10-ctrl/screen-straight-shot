@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card } from "@/components/ui/card";
 import { Tv, ExternalLink } from "lucide-react";
+import curtainsBg from "@/assets/now-watching-curtains.jpg";
 
 type Entry = {
   id: string;
