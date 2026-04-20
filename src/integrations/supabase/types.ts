@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      now_watching: {
+        Row: {
+          added_by: string | null
+          created_at: string
+          id: string
+          note: string | null
+          post_url: string
+          title: string | null
+          updated_at: string
+        }
+        Insert: {
+          added_by?: string | null
+          created_at?: string
+          id?: string
+          note?: string | null
+          post_url: string
+          title?: string | null
+          updated_at?: string
+        }
+        Update: {
+          added_by?: string | null
+          created_at?: string
+          id?: string
+          note?: string | null
+          post_url?: string
+          title?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       submissions: {
         Row: {
           created_at: string
