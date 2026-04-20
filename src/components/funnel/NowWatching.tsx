@@ -50,7 +50,7 @@ export const NowWatching = () => {
   }, []);
 
   return (
-    <section aria-labelledby="now-watching-heading" className="space-y-4">
+    <section aria-labelledby="now-watching-heading" className="space-y-4 !block" style={{ display: 'block' }}>
       <div className="flex items-center gap-2">
         <Tv className="w-4 h-4 text-primary" />
         <h2
@@ -65,7 +65,7 @@ export const NowWatching = () => {
         </span>
       </div>
 
-      {entry ? (
+      {false ? (
         <Card className="p-5 md:p-6 bg-card/60 backdrop-blur border-border space-y-3">
           {entry.title && (
             <h3 className="text-lg md:text-xl font-bold text-foreground">
