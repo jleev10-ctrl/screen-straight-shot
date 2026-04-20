@@ -4,6 +4,7 @@ import { Manifesto } from "@/components/funnel/Manifesto";
 import { EmployeeIntro } from "@/components/funnel/EmployeeIntro";
 import { ToolCard, tools } from "@/components/funnel/ToolsSidebar";
 import { CTAButtons } from "@/components/funnel/CTAButtons";
+import { NowWatching } from "@/components/funnel/NowWatching";
 import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 
 const Index = () => {
@@ -61,6 +62,9 @@ const Index = () => {
           <section id="submit" className="scroll-mt-8">
             <SubmissionForm />
           </section>
+
+          {/* Bucket 11: Now Watching */}
+          <NowWatching />
         </div>
       </main>
     </>
