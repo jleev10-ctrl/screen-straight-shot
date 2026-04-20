@@ -6,6 +6,7 @@ import { ToolCard, tools } from "@/components/funnel/ToolsSidebar";
 import { CTAButtons } from "@/components/funnel/CTAButtons";
 import { NowWatching } from "@/components/funnel/NowWatching";
 import { SubmissionForm } from "@/components/funnel/SubmissionForm";
+import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 
 const Index = () => {
   useEffect(() => {
@@ -52,9 +53,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Bucket 11: Now Watching — moved up temporarily so it's visible without scrolling */}
-          <NowWatching />
-
           {/* CTAs */}
           <CTAButtons />
 
@@ -65,6 +63,12 @@ const Index = () => {
           <section id="submit" className="scroll-mt-8">
             <SubmissionForm />
           </section>
+
+          {/* Bucket 10: Now Watching (curtains) */}
+          <NowWatching />
+
+          {/* Bucket 11: Google Search Preview */}
+          <GoogleSearchPreview />
         </div>
       </main>
     </>
