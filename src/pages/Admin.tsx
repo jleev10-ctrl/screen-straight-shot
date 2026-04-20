@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { LogOut, ExternalLink, Star, X as XIcon, RotateCcw, Shield } from "lucide-react";
+import { NowWatchingPanel } from "@/components/admin/NowWatchingPanel";
 
 type Submission = {
   id: string;
@@ -130,7 +131,13 @@ const Admin = () => {
           </div>
         </header>
 
-        <div className="container mx-auto px-4 py-8 space-y-4">
+        <div className="container mx-auto px-4 py-8 space-y-6">
+          {user && <NowWatchingPanel userId={user.id} />}
+
+          <div className="space-y-2">
+            <h2 className="text-lg font-bold">Submissions</h2>
+          </div>
+
           {loading && <p className="text-muted-foreground">Loading...</p>}
           {!loading && submissions.length === 0 && (
             <Card className="p-12 text-center text-muted-foreground">No submissions yet.</Card>
