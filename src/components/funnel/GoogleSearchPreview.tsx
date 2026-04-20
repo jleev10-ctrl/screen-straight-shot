@@ -1,3 +1,5 @@
+import curtainsBg from "@/assets/now-watching-curtains.jpg";
+
 export const GoogleSearchPreview = () => {
   return (
     <section
@@ -12,7 +14,7 @@ export const GoogleSearchPreview = () => {
       </p>
 
       <div
-        className="max-w-[600px] rounded-lg bg-white px-[18px] py-4 shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
+        className="max-w-[600px] rounded-lg bg-white px-[18px] py-4 shadow-[0_2px_8px_rgba(0,0,0,0.18)] space-y-3"
         style={{ fontFamily: "Arial, sans-serif" }}
       >
         <div className="mb-0.5 flex items-center gap-1.5 text-xs">
@@ -42,6 +44,30 @@ export const GoogleSearchPreview = () => {
         >
           Storage Locker Studios — Battle of the Engines
         </h3>
+
+        {/* Curtain placeholder — parts when a video is wired in */}
+        <div
+          className="relative w-full overflow-hidden rounded-md aspect-video flex items-center justify-center"
+          style={{
+            backgroundImage: `url(${curtainsBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          aria-label="Curtain placeholder — awaiting feature"
+        >
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="relative text-center px-4">
+            <p
+              className="text-white font-bold text-lg md:text-xl drop-shadow-lg"
+              style={{ fontFamily: "Arial, sans-serif" }}
+            >
+              Now Watching… it could be you.
+            </p>
+            <p className="text-white/80 text-xs md:text-sm mt-1 drop-shadow">
+              Curtains rise when the next film drops.
+            </p>
+          </div>
+        </div>
 
         <p className="text-sm leading-relaxed" style={{ color: "#4d5156" }}>
           <span className="font-bold" style={{ color: "#202124" }}>
