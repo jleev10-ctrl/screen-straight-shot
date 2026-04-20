@@ -16,7 +16,7 @@ export const Hero = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            The <span className="text-gradient">Tap Movie</span> Engine
+            Make <span className="text-gradient">Magic</span> Making Movies
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
