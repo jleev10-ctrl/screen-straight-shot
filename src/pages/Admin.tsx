@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { LogOut, ExternalLink, Star, X as XIcon, RotateCcw, Shield } from "lucide-react";
+import { NowWatchingPanel } from "@/components/admin/NowWatchingPanel";
 
 type Submission = {
   id: string;
