@@ -14,7 +14,7 @@ type Entry = {
 
 export const NowWatching = () => {
   const [entry, setEntry] = useState<Entry | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
 
   useEffect(() => {
     let mounted = true;
@@ -48,8 +48,6 @@ export const NowWatching = () => {
       supabase.removeChannel(channel);
     };
   }, []);
-
-  if (loading) return null;
 
   return (
     <section aria-labelledby="now-watching-heading" className="space-y-4">
