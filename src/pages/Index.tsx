@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { Manifesto } from "@/components/funnel/Manifesto";
 import { EmployeeIntro } from "@/components/funnel/EmployeeIntro";
 import { ToolCard, tools } from "@/components/funnel/ToolsSidebar";
+import { CTAButtons } from "@/components/funnel/CTAButtons";
+import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 
 const Index = () => {
   useEffect(() => {
@@ -49,8 +51,16 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Manifesto below */}
+          {/* CTAs */}
+          <CTAButtons />
+
+          {/* Manifesto */}
           <Manifesto />
+
+          {/* Submission form */}
+          <section id="submit" className="scroll-mt-8">
+            <SubmissionForm />
+          </section>
         </div>
       </main>
     </>
