@@ -48,7 +48,7 @@ export const NowWatching = () => {
     };
   }, []);
 
-  if (loading || !entry) return null;
+  if (loading) return null;
 
   return (
     <section aria-labelledby="now-watching-heading" className="space-y-4">
@@ -66,26 +66,43 @@ export const NowWatching = () => {
         </span>
       </div>
 
-      <Card className="p-5 md:p-6 bg-card/60 backdrop-blur border-border space-y-3">
-        {entry.title && (
-          <h3 className="text-lg md:text-xl font-bold text-foreground">
-            {entry.title}
-          </h3>
-        )}
-        {entry.note && (
-          <p className="text-sm text-foreground/80 whitespace-pre-wrap">
-            {entry.note}
+      {entry ? (
+        <Card className="p-5 md:p-6 bg-card/60 backdrop-blur border-border space-y-3">
+          {entry.title && (
+            <h3 className="text-lg md:text-xl font-bold text-foreground">
+              {entry.title}
+            </h3>
+          )}
+          {entry.note && (
+            <p className="text-sm text-foreground/80 whitespace-pre-wrap">
+              {entry.note}
+            </p>
+          )}
+          <a
+            href={entry.post_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline font-semibold break-all"
+          >
+            Watch on X <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+          </a>
+        </Card>
+      ) : (
+        <Card className="p-5 md:p-6 bg-card/60 backdrop-blur border-border space-y-2 text-center">
+          <p className="text-base md:text-lg font-bold text-foreground">
+            Now Watching… it could be you.
           </p>
-        )}
-        <a
-          href={entry.post_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline font-semibold break-all"
-        >
-          Watch on X <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-        </a>
-      </Card>
+          <a
+            href="https://x.com/CuratorSLS"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline font-semibold"
+          >
+            Follow Storage Locker Studios @CuratorSLS on X
+            <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+          </a>
+        </Card>
+      )}
     </section>
   );
 };
