@@ -26,8 +26,8 @@ const Index = () => {
       <main className="min-h-screen bg-hero px-4 py-12 md:py-16">
         <div className="w-full max-w-6xl mx-auto space-y-16">
           {/* Driver + flanking partners */}
-          <section className="grid gap-6 lg:grid-cols-[200px_1fr_200px] lg:items-start">
-            <div className="hidden lg:flex flex-col gap-3 lg:pt-16">
+          <section className="grid gap-6 lg:grid-cols-[200px_1fr_200px] lg:items-center">
+            <div className="hidden lg:flex flex-col gap-3">
               {leftTools.map((t) => (
                 <ToolCard key={t.name} tool={t} />
               ))}
@@ -35,7 +35,7 @@ const Index = () => {
 
             <EmployeeIntro />
 
-            <div className="hidden lg:flex flex-col gap-3 lg:pt-16">
+            <div className="hidden lg:flex flex-col gap-3">
               {rightTools.map((t) => (
                 <ToolCard key={t.name} tool={t} />
               ))}
