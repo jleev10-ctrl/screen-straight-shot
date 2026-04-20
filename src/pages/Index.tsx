@@ -52,6 +52,9 @@ const Index = () => {
             </div>
           </section>
 
+          {/* Bucket 11: Now Watching — moved up temporarily so it's visible without scrolling */}
+          <NowWatching />
+
           {/* CTAs */}
           <CTAButtons />
 
@@ -62,9 +65,6 @@ const Index = () => {
           <section id="submit" className="scroll-mt-8">
             <SubmissionForm />
           </section>
-
-          {/* Bucket 11: Now Watching */}
-          <NowWatching />
         </div>
       </main>
     </>
