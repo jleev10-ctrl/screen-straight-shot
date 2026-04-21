@@ -289,14 +289,22 @@ backdrop-filter: blur(8px);
   }
   .hero-img-left {
     display: block;
-    opacity: 0.45;
-    width: 65%;
+    opacity: 0.32;
+    width: 60%;
     height: 100%;
     -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
             mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
   }
-  .hero-eyebrow, .hero h1, .hero-sub {
+  .hero-eyebrow, .hero-sub {
     text-shadow: 0 2px 12px rgba(0,0,0,0.85);
+  }
+  /* Punch the gold back up on phone */
+  .hero h1 {
+    filter:
+      drop-shadow(2px 4px 0px rgba(40,20,0,1))
+      drop-shadow(3px 6px 0px rgba(20,10,0,0.85))
+      drop-shadow(0 0 18px rgba(255,200,0,0.85))
+      drop-shadow(0 0 32px rgba(255,170,0,0.5));
   }
 }
 
