@@ -14,6 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
+      fans: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+        }
+        Relationships: []
+      }
       now_watching: {
         Row: {
           added_by: string | null
