@@ -561,7 +561,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 </div>
 
 <nav>
-<div class="nav-logo" onclick="goHome()" style="cursor:pointer;" title="Return to the Arena">
+<a class="nav-logo" href="/auth" style="cursor:pointer;text-decoration:none;color:inherit;" title="Studio access">
 <svg width="28" height="28" viewBox="0 0 28 28">
 <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
 <text x="14" y="17" font-family="'Barlow Condensed'" font-weight="800" font-size="9" fill="#c9a84c" text-anchor="middle" letter-spacing="1">SL</text>
@@ -569,7 +569,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 <div>
 <div class="nav-logo-text">Storage Locker Studios</div>
 </div>
-</div>
+</a>
 <ul class="nav-links">
 <li><a href="#" class="active" id="navArena" onclick="showEngineA(event)">Arena</a></li>
 <li><a href="#" id="navManifesto" onclick="showManifesto(event)">Manifesto</a></li>
@@ -578,9 +578,24 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 <li><a href="#">Docs</a></li>
 </ul>
 <div class="nav-right">
-<button class="btn-signin">Sign In</button>
+<button class="btn-signin" onclick="openLockerModal()">Join the Locker</button>
 </div>
 </nav>
+
+<!-- Join the Locker modal -->
+<div id="lockerOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:20px;" onclick="closeLockerModal(event)">
+  <div style="background:#0f0f0f;border:1px solid #c9a84c;max-width:440px;width:100%;padding:32px;font-family:'Barlow Condensed',sans-serif;color:#e8e8e8;" onclick="event.stopPropagation()">
+    <div style="font-size:11px;letter-spacing:2px;color:#c9a84c;margin-bottom:8px;">// LOCKER ACCESS</div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;margin:0 0 8px;letter-spacing:1px;">Join the Locker</h2>
+    <p style="font-size:14px;color:#999;margin:0 0 20px;line-height:1.5;">Drop your email. We'll let you know when new rounds drop and when the vault opens for voting.</p>
+    <form id="lockerForm" onsubmit="submitLocker(event)">
+      <input type="email" id="lockerEmail" required placeholder="you@email.com" style="width:100%;padding:12px 14px;background:#000;border:1px solid #333;color:#fff;font-family:inherit;font-size:15px;margin-bottom:12px;box-sizing:border-box;">
+      <button type="submit" id="lockerSubmit" style="width:100%;padding:12px;background:#c9a84c;color:#000;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;">Lock Me In</button>
+    </form>
+    <div id="lockerMsg" style="margin-top:12px;font-size:13px;min-height:18px;"></div>
+    <button type="button" onclick="closeLockerModal()" style="margin-top:16px;background:none;border:none;color:#666;font-size:11px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;">[ Close ]</button>
+  </div>
+</div>
 
 <!-- HERO — Cinematic Banner -->
 <div class="hero" onclick="goHome()" title="Return to the Arena">
@@ -1189,6 +1204,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
+
+<!-- Join the Locker — email capture -->
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
+const SUPABASE_URL = 'https://ujkbrgharuncofuxcurg.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqa2JyZ2hhcnVuY29mdXhjdXJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY2MzkwMTgsImV4cCI6MjA5MjIxNTAxOH0.BTlMS0sIO7PyjNPaCRsvqDEvRISHWLw-eZH4HJJ3iYk';
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+window.openLockerModal = function() {
+  document.getElementById('lockerOverlay').style.display = 'flex';
+  setTimeout(() => document.getElementById('lockerEmail').focus(), 50);
+};
+window.closeLockerModal = function(e) {
+  if (e && e.target && e.target.id !== 'lockerOverlay' && e.type === 'click') return;
+  document.getElementById('lockerOverlay').style.display = 'none';
+  document.getElementById('lockerMsg').textContent = '';
+  document.getElementById('lockerForm').reset();
+};
+window.submitLocker = async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('lockerSubmit');
+  const msg = document.getElementById('lockerMsg');
+  const email = document.getElementById('lockerEmail').value.trim().toLowerCase();
+  if (!email || email.length > 255) { msg.style.color = '#ff6b6b'; msg.textContent = 'Valid email required.'; return; }
+  btn.disabled = true; btn.textContent = 'LOCKING IN...';
+  const { error } = await sb.from('fans').insert({ email });
+  btn.disabled = false; btn.textContent = 'Lock Me In';
+  if (error) {
+    if (error.code === '23505') { msg.style.color = '#c9a84c'; msg.textContent = "You're already in the locker."; }
+    else { msg.style.color = '#ff6b6b'; msg.textContent = 'Something broke. Try again.'; console.error(error); }
+    return;
+  }
+  msg.style.color = '#c9a84c';
+  msg.textContent = "✓ You're in. Stay tuned.";
+  setTimeout(() => window.closeLockerModal(), 1800);
+};
 </script>
 </body>
 </html>
