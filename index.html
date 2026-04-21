@@ -283,9 +283,22 @@ backdrop-filter: blur(8px);
     padding: 36px 16px 30px;
     min-height: auto;
   }
+  /* Phone: keep JOY + TEST visible but blend them behind the text */
   .hero-img-left,
   .hero-img-right {
-    display: none;
+    display: block;
+    opacity: 0.45;
+    width: 55%;
+    height: 100%;
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  }
+  .hero-img-right {
+    -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  }
+  .hero-eyebrow, .hero h1, .hero-sub {
+    text-shadow: 0 2px 12px rgba(0,0,0,0.85);
   }
 }
 
