@@ -1205,5 +1205,42 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<!-- Join the Locker — email capture -->
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
+const SUPABASE_URL = 'https://ujkbrgharuncofuxcurg.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqa2JyZ2hhcnVuY29mdXhjdXJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY2MzkwMTgsImV4cCI6MjA5MjIxNTAxOH0.BTlMS0sIO7PyjNPaCRsvqDEvRISHWLw-eZH4HJJ3iYk';
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+window.openLockerModal = function() {
+  document.getElementById('lockerOverlay').style.display = 'flex';
+  setTimeout(() => document.getElementById('lockerEmail').focus(), 50);
+};
+window.closeLockerModal = function(e) {
+  if (e && e.target && e.target.id !== 'lockerOverlay' && e.type === 'click') return;
+  document.getElementById('lockerOverlay').style.display = 'none';
+  document.getElementById('lockerMsg').textContent = '';
+  document.getElementById('lockerForm').reset();
+};
+window.submitLocker = async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('lockerSubmit');
+  const msg = document.getElementById('lockerMsg');
+  const email = document.getElementById('lockerEmail').value.trim().toLowerCase();
+  if (!email || email.length > 255) { msg.style.color = '#ff6b6b'; msg.textContent = 'Valid email required.'; return; }
+  btn.disabled = true; btn.textContent = 'LOCKING IN...';
+  const { error } = await sb.from('fans').insert({ email });
+  btn.disabled = false; btn.textContent = 'Lock Me In';
+  if (error) {
+    if (error.code === '23505') { msg.style.color = '#c9a84c'; msg.textContent = "You're already in the locker."; }
+    else { msg.style.color = '#ff6b6b'; msg.textContent = 'Something broke. Try again.'; console.error(error); }
+    return;
+  }
+  msg.style.color = '#c9a84c';
+  msg.textContent = "✓ You're in. Stay tuned.";
+  setTimeout(() => window.closeLockerModal(), 1800);
+};
+</script>
 </body>
 </html>
