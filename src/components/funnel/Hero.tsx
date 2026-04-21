@@ -20,8 +20,8 @@ export const Hero = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            One old man, a stack of AI tools, and a stubborn idea about how movies
-            get made next. Submit a clip — the best ones get featured on X.
+            The AI revolution has arrived. Everyone wants to make a movie.
+            We have the tools you need. Let's see what you've got.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
