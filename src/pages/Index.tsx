@@ -9,6 +9,7 @@ import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 import { Footer } from "@/components/funnel/Footer";
 import { BucketPlaceholder } from "@/components/funnel/BucketPlaceholder";
+import { EngineSponsorRail } from "@/components/funnel/EngineSponsorRail";
 
 const Index = () => {
   useEffect(() => {
@@ -73,7 +74,7 @@ const Index = () => {
             id="bucket-6-murmur"
           />
 
-          {/* Bucket 7 — The Girl (EmployeeIntro) */}
+          {/* Bucket 7 — The Girl (EmployeeIntro) + Desktop sponsor rail */}
           <section id="bucket-7-the-girl" className="space-y-4 scroll-mt-8">
             <div className="space-y-2">
               <p className="text-sm font-mono text-primary uppercase tracking-widest">
@@ -83,8 +84,17 @@ const Index = () => {
                 Meet the operator
               </h2>
             </div>
-            <EmployeeIntro />
-            <CTAButtons />
+
+            {/* Desktop: video + sponsor rail side-by-side. Mobile: video only (rail hidden). */}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_220px] gap-6 items-start">
+              <div className="space-y-4 min-w-0">
+                <EmployeeIntro />
+                <CTAButtons />
+              </div>
+              <div className="hidden md:block">
+                <EngineSponsorRail />
+              </div>
+            </div>
           </section>
 
           {/* Manifesto (existing supporting copy) */}
