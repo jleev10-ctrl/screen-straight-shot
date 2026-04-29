@@ -10,6 +10,7 @@ import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 import { Footer } from "@/components/funnel/Footer";
 import { BucketPlaceholder } from "@/components/funnel/BucketPlaceholder";
 import { EngineSponsorRail } from "@/components/funnel/EngineSponsorRail";
+import { EngineUpdates } from "@/components/funnel/EngineUpdates";
 
 const Index = () => {
   useEffect(() => {
@@ -90,6 +91,8 @@ const Index = () => {
               <div className="space-y-4 min-w-0">
                 <EmployeeIntro />
                 <CTAButtons />
+                {/* Engine Updates email capture (replaces old "Join the Locker" CTA) */}
+                <EngineUpdates />
               </div>
               <div className="hidden md:block">
                 <EngineSponsorRail />
@@ -111,13 +114,13 @@ const Index = () => {
             id="bucket-8-vaults"
           />
 
-          {/* Bucket 9 — Season Stats */}
-          <BucketPlaceholder
+          {/* Bucket 9 — Season Stats — UNBOLTED (vaulted for plug-and-play later) */}
+          {/* <BucketPlaceholder
             number={9}
             title="Season Stats"
             description="Aggregate stats across the season: rounds, entries, winners, hours of footage."
             id="bucket-9-season-stats"
-          />
+          /> */}
 
           {/* Bucket 10 — Battle Notes */}
           <BucketPlaceholder
