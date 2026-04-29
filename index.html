@@ -278,6 +278,17 @@ backdrop-filter: blur(8px);
   }
 }
 
+/* Phone: tighten Engine Updates capture so it doesn't overrun the nav */
+@media (max-width: 640px) {
+  nav { padding: 0 12px; gap: 8px; }
+  .nav-links { display: none; }
+  #engineUpdatesForm { gap: 4px !important; }
+  #engineUpdatesForm > span:first-child { display: none; }
+  #engineUpdatesEmail { width: 130px !important; font-size: 11px !important; padding: 5px 8px !important; }
+  #engineUpdatesSubmit { padding: 5px 8px !important; font-size: 10px !important; letter-spacing: 1px !important; }
+  #engineUpdatesMsg { display: none; }
+}
+
 @media (max-width: 640px) {
   .hero {
     padding: 36px 16px 30px;
