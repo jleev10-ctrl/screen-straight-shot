@@ -607,13 +607,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 <!-- <li><a href="#">Competitions</a></li> -->
 <!-- <li><a href="#">Docs</a></li> -->
 </ul>
-<div class="nav-right">
-<form id="engineUpdatesForm" onsubmit="submitEngineUpdates(event)" style="display:flex;align-items:center;gap:6px;">
-  <input type="email" id="engineUpdatesEmail" required placeholder="you@email.com" style="padding:6px 10px;background:#000;border:1px solid #333;color:#fff;font-family:inherit;font-size:12px;width:160px;box-sizing:border-box;">
-  <button type="submit" id="engineUpdatesSubmit" style="padding:6px 12px;background:#c9a84c;color:#000;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;white-space:nowrap;">Engine Updates</button>
-  <span id="engineUpdatesMsg" style="font-size:11px;color:#c9a84c;min-width:0;"></span>
-</form>
-</div>
+<!-- nav-right unbolted — lean header -->
 </nav>
 
 <!-- HERO — Cinematic Banner -->
@@ -1118,8 +1112,8 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 function goHome() {
 hideAll();
 document.getElementById('battleView').style.display = 'block';
-document.getElementById('navArena').classList.add('active');
-document.getElementById('tabArena').classList.add('active');
+var na = document.getElementById('navArena'); if(na) na.classList.add('active');
+var ta = document.getElementById('tabArena'); if(ta) ta.classList.add('active');
 var n = document.getElementById('navManifesto'); if(n) n.classList.remove('active');
 var v = document.getElementById('navVaults'); if(v) v.classList.remove('active');
 var b = document.getElementById('btnBattle'), m = document.getElementById('btnMemo'), d = document.getElementById('btnDispatch');
