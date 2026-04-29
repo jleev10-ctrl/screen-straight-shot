@@ -10,7 +10,6 @@ import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 import { Footer } from "@/components/funnel/Footer";
 import { BucketPlaceholder } from "@/components/funnel/BucketPlaceholder";
 import { EngineSponsorRail } from "@/components/funnel/EngineSponsorRail";
-import { EngineUpdates } from "@/components/funnel/EngineUpdates";
 
 const Index = () => {
   useEffect(() => {
