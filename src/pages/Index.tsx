@@ -90,8 +90,6 @@ const Index = () => {
               <div className="space-y-4 min-w-0">
                 <EmployeeIntro />
                 <CTAButtons />
-                {/* Engine Updates email capture (replaces old "Join the Locker" CTA) */}
-                <EngineUpdates />
               </div>
               <div className="hidden md:block">
                 <EngineSponsorRail />
