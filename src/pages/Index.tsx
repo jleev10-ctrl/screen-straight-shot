@@ -114,13 +114,13 @@ const Index = () => {
             id="bucket-8-vaults"
           />
 
-          {/* Bucket 9 — Season Stats */}
-          <BucketPlaceholder
+          {/* Bucket 9 — Season Stats — UNBOLTED (vaulted for plug-and-play later) */}
+          {/* <BucketPlaceholder
             number={9}
             title="Season Stats"
             description="Aggregate stats across the season: rounds, entries, winners, hours of footage."
             id="bucket-9-season-stats"
-          />
+          /> */}
 
           {/* Bucket 10 — Battle Notes */}
           <BucketPlaceholder
