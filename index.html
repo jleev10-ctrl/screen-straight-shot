@@ -609,9 +609,8 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 </ul>
 <div class="nav-right">
 <form id="engineUpdatesForm" onsubmit="submitEngineUpdates(event)" style="display:flex;align-items:center;gap:6px;">
-  <span style="font-size:10px;letter-spacing:2px;color:#c9a84c;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;font-weight:700;white-space:nowrap;">Engine Updates</span>
   <input type="email" id="engineUpdatesEmail" required placeholder="you@email.com" style="padding:6px 10px;background:#000;border:1px solid #333;color:#fff;font-family:inherit;font-size:12px;width:160px;box-sizing:border-box;">
-  <button type="submit" id="engineUpdatesSubmit" style="padding:6px 12px;background:#c9a84c;color:#000;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;white-space:nowrap;">Notify Me</button>
+  <button type="submit" id="engineUpdatesSubmit" style="padding:6px 12px;background:#c9a84c;color:#000;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;white-space:nowrap;">Engine Updates</button>
   <span id="engineUpdatesMsg" style="font-size:11px;color:#c9a84c;min-width:0;"></span>
 </form>
 </div>
@@ -1242,7 +1241,7 @@ window.submitEngineUpdates = async function(e) {
   if (!email || email.length > 255) { msg.style.color = '#ff6b6b'; msg.textContent = 'Invalid'; return; }
   btn.disabled = true; btn.textContent = '...';
   const { error } = await sb.from('fans').insert({ email });
-  btn.disabled = false; btn.textContent = 'Notify Me';
+  btn.disabled = false; btn.textContent = 'Engine Updates';
   if (error) {
     if (error.code === '23505') { msg.style.color = '#c9a84c'; msg.textContent = '✓ Already subscribed'; }
     else { msg.style.color = '#ff6b6b'; msg.textContent = 'Try again'; console.error(error); }
