@@ -1241,7 +1241,7 @@ window.submitEngineUpdates = async function(e) {
   if (!email || email.length > 255) { msg.style.color = '#ff6b6b'; msg.textContent = 'Invalid'; return; }
   btn.disabled = true; btn.textContent = '...';
   const { error } = await sb.from('fans').insert({ email });
-  btn.disabled = false; btn.textContent = 'Notify Me';
+  btn.disabled = false; btn.textContent = 'Engine Updates';
   if (error) {
     if (error.code === '23505') { msg.style.color = '#c9a84c'; msg.textContent = '✓ Already subscribed'; }
     else { msg.style.color = '#ff6b6b'; msg.textContent = 'Try again'; console.error(error); }
