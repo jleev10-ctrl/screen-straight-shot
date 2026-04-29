@@ -597,24 +597,14 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 <li><a href="#">Docs</a></li>
 </ul>
 <div class="nav-right">
-<button class="btn-signin" onclick="openLockerModal()">Join the Locker</button>
+<form id="engineUpdatesForm" onsubmit="submitEngineUpdates(event)" style="display:flex;align-items:center;gap:6px;">
+  <span style="font-size:10px;letter-spacing:2px;color:#c9a84c;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;font-weight:700;white-space:nowrap;">Engine Updates</span>
+  <input type="email" id="engineUpdatesEmail" required placeholder="you@email.com" style="padding:6px 10px;background:#000;border:1px solid #333;color:#fff;font-family:inherit;font-size:12px;width:160px;box-sizing:border-box;">
+  <button type="submit" id="engineUpdatesSubmit" style="padding:6px 12px;background:#c9a84c;color:#000;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;white-space:nowrap;">Notify Me</button>
+  <span id="engineUpdatesMsg" style="font-size:11px;color:#c9a84c;min-width:0;"></span>
+</form>
 </div>
 </nav>
-
-<!-- Join the Locker modal -->
-<div id="lockerOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:20px;" onclick="closeLockerModal(event)">
-  <div style="background:#0f0f0f;border:1px solid #c9a84c;max-width:440px;width:100%;padding:32px;font-family:'Barlow Condensed',sans-serif;color:#e8e8e8;" onclick="event.stopPropagation()">
-    <div style="font-size:11px;letter-spacing:2px;color:#c9a84c;margin-bottom:8px;">// LOCKER ACCESS</div>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;margin:0 0 8px;letter-spacing:1px;">Join the Locker</h2>
-    <p style="font-size:14px;color:#999;margin:0 0 20px;line-height:1.5;">Drop your email. We'll let you know when new rounds drop and when the vault opens for voting.</p>
-    <form id="lockerForm" onsubmit="submitLocker(event)">
-      <input type="email" id="lockerEmail" required placeholder="you@email.com" style="width:100%;padding:12px 14px;background:#000;border:1px solid #333;color:#fff;font-family:inherit;font-size:15px;margin-bottom:12px;box-sizing:border-box;">
-      <button type="submit" id="lockerSubmit" style="width:100%;padding:12px;background:#c9a84c;color:#000;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;">Lock Me In</button>
-    </form>
-    <div id="lockerMsg" style="margin-top:12px;font-size:13px;min-height:18px;"></div>
-    <button type="button" onclick="closeLockerModal()" style="margin-top:16px;background:none;border:none;color:#666;font-size:11px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;">[ Close ]</button>
-  </div>
-</div>
 
 <!-- HERO — Cinematic Banner -->
 <div class="hero" onclick="goHome()" title="Return to the Arena">
