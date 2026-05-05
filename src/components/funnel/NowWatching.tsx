@@ -87,24 +87,14 @@ export const NowWatching = () => {
           </a>
         </Card>
       ) : (
-        <Card
-          className="relative overflow-hidden p-8 md:p-12 border-border text-center min-h-[240px] md:min-h-[300px] flex flex-col items-center justify-center gap-3"
-          style={{
-            backgroundImage: `linear-gradient(to bottom, hsl(var(--background) / 0.55), hsl(var(--background) / 0.75)), url(${curtainsBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <p className="text-xl md:text-2xl font-bold text-foreground drop-shadow-lg">
-            Now Watching… it could be you.
-          </p>
+        <Card className="p-5 md:p-6 bg-card/60 backdrop-blur border-border">
           <a
-            href="https://x.com/CuratorSLS"
+            href="https://youtube.com/shorts/zFGXNoDWXCY?si=_FMozekGcbkbDzER"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm md:text-base text-primary hover:underline font-semibold drop-shadow"
+            className="inline-flex items-center gap-1.5 text-sm md:text-base text-primary hover:underline font-semibold break-all"
           >
-            Follow Storage Locker Studios @CuratorSLS on X
+            https://youtube.com/shorts/zFGXNoDWXCY?si=_FMozekGcbkbDzER
             <ExternalLink className="w-3.5 h-3.5 shrink-0" />
           </a>
         </Card>
