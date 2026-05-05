@@ -562,6 +562,11 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
   line-height: 1.55;
 }
 .google-card-desc span { color: #202124; font-weight: bold; }
+.now-watching-frame { position: relative; width: 100%; max-width: 400px; margin: 0 auto; aspect-ratio: 9 / 16; }
+.now-watching-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; }
+@media (min-width: 768px) {
+  .now-watching-frame { max-width: none; aspect-ratio: auto; height: 100vh; }
+}
 
 /* ── Click-to-Expand video ── */
 .film-thumb {
@@ -1094,8 +1099,8 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
       <span class="google-card-path"> › arena</span>
     </div>
     <div class="google-card-title">Storage Locker Studios — Battle of the Engines</div>
-    <div style="position: relative; width: 100%; max-width: 400px; margin: 0 auto; aspect-ratio: 9 / 16;">
-      <iframe src="https://www.youtube.com/embed/zFGXNoDWXCY" title="Now Watching" style="position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:6px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="now-watching-frame">
+      <iframe src="https://www.youtube.com/embed/zFGXNoDWXCY" title="Now Watching" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
 </div>

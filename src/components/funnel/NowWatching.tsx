@@ -88,7 +88,7 @@ export const NowWatching = () => {
         </Card>
       ) : (
         <Card className="p-3 md:p-4 bg-card/60 backdrop-blur border-border">
-          <div className="relative w-full max-w-[400px] mx-auto" style={{ aspectRatio: "9 / 16" }}>
+          <div className="relative w-full mx-auto max-w-[400px] md:max-w-none md:h-[100vh] md:aspect-auto" style={{ aspectRatio: "9 / 16" }}>
             <iframe
               src="https://www.youtube.com/embed/zFGXNoDWXCY"
               title="Now Watching"
