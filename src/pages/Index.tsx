@@ -3,13 +3,11 @@ import { Helmet } from "react-helmet-async";
 import { Hero } from "@/components/funnel/Hero";
 import { Manifesto } from "@/components/funnel/Manifesto";
 import { EmployeeIntro } from "@/components/funnel/EmployeeIntro";
-import { CTAButtons } from "@/components/funnel/CTAButtons";
 import { NowWatching } from "@/components/funnel/NowWatching";
 import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 import { Footer } from "@/components/funnel/Footer";
 import { BucketPlaceholder } from "@/components/funnel/BucketPlaceholder";
-import { EngineSponsorRail } from "@/components/funnel/EngineSponsorRail";
 
 const Index = () => {
   useEffect(() => {
