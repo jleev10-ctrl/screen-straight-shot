@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Hero } from "@/components/funnel/Hero";
 import { Manifesto } from "@/components/funnel/Manifesto";
 import { EmployeeIntro } from "@/components/funnel/EmployeeIntro";
+import { PaddockRailLeft, PaddockRailRight } from "@/components/funnel/PaddockRails";
 import { NowWatching } from "@/components/funnel/NowWatching";
 import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
@@ -72,9 +73,19 @@ const Index = () => {
             id="bucket-6-murmur"
           />
 
-          {/* Bucket 7 — The Girl (EmployeeIntro only) */}
+          {/* Bucket 7 — The Girl (EmployeeIntro + desktop-only F1-paddock sponsor rails) */}
           <section id="bucket-7-the-girl" className="scroll-mt-8">
-            <EmployeeIntro />
+            {/* Mobile: just the video. Desktop (lg+): rails flank the video. */}
+            <div className="lg:hidden">
+              <EmployeeIntro />
+            </div>
+            <div className="hidden lg:grid lg:grid-cols-[180px_minmax(0,1fr)_180px] xl:grid-cols-[200px_minmax(0,1fr)_200px] gap-6 items-start">
+              <PaddockRailLeft />
+              <div className="max-w-[520px] mx-auto w-full">
+                <EmployeeIntro />
+              </div>
+              <PaddockRailRight />
+            </div>
           </section>
 
           {/* Manifesto (existing supporting copy) */}
