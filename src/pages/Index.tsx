@@ -103,13 +103,13 @@ const Index = () => {
           {/* Submission form (existing) */}
           <SubmissionForm />
 
-          {/* Bucket 8 — Active Vaults / Engine Rankings */}
-          <BucketPlaceholder
+          {/* Bucket 8 — Active Vaults / Engine Rankings — UNBOLTED (hidden, plug-and-play) */}
+          {/* <BucketPlaceholder
             number={8}
             title="Active Vaults — Engine Rankings"
             description="Live rankings of active vaults / engines competing this round."
             id="bucket-8-vaults"
-          />
+          /> */}
 
           {/* Bucket 9 — Season Stats — UNBOLTED (vaulted for plug-and-play later) */}
           {/* <BucketPlaceholder
