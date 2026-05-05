@@ -87,16 +87,16 @@ export const NowWatching = () => {
           </a>
         </Card>
       ) : (
-        <Card className="p-5 md:p-6 bg-card/60 backdrop-blur border-border">
-          <a
-            href="https://youtube.com/shorts/zFGXNoDWXCY?si=_FMozekGcbkbDzER"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm md:text-base text-primary hover:underline font-semibold break-all"
-          >
-            https://youtube.com/shorts/zFGXNoDWXCY?si=_FMozekGcbkbDzER
-            <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-          </a>
+        <Card className="p-3 md:p-4 bg-card/60 backdrop-blur border-border">
+          <div className="relative w-full max-w-[400px] mx-auto" style={{ aspectRatio: "9 / 16" }}>
+            <iframe
+              src="https://www.youtube.com/embed/zFGXNoDWXCY"
+              title="Now Watching"
+              className="absolute inset-0 w-full h-full rounded-md"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
         </Card>
       )}
     </section>
