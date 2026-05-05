@@ -74,27 +74,9 @@ const Index = () => {
             id="bucket-6-murmur"
           />
 
-          {/* Bucket 7 — The Girl (EmployeeIntro) + Desktop sponsor rail */}
-          <section id="bucket-7-the-girl" className="space-y-4 scroll-mt-8">
-            <div className="space-y-2">
-              <p className="text-sm font-mono text-primary uppercase tracking-widest">
-                07 — The Girl
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-                Meet the operator
-              </h2>
-            </div>
-
-            {/* Desktop: video + sponsor rail side-by-side. Mobile: video only (rail hidden). */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_220px] gap-6 items-start">
-              <div className="space-y-4 min-w-0">
-                <EmployeeIntro />
-                <CTAButtons />
-              </div>
-              <div className="hidden md:block">
-                <EngineSponsorRail />
-              </div>
-            </div>
+          {/* Bucket 7 — The Girl (EmployeeIntro only) */}
+          <section id="bucket-7-the-girl" className="scroll-mt-8">
+            <EmployeeIntro />
           </section>
 
           {/* Manifesto (existing supporting copy) */}
