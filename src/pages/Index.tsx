@@ -74,17 +74,26 @@ const Index = () => {
             id="bucket-6-murmur"
           />
 
-          {/* Bucket 7 — The Girl (EmployeeIntro + desktop-only F1-paddock sponsor rails) */}
-          <section id="bucket-7-the-girl" className="scroll-mt-8">
-            {/* Mobile: just the video. Desktop (lg+): rails flank the video. */}
+          {/* Bucket 7 — The Girl (EmployeeIntro + desktop reels + sponsor rails) */}
+          <section id="bucket-7-the-girl" className="scroll-mt-8 space-y-8">
+            {/* Mobile: just the video (vertical scroll only — no rails). */}
             <div className="lg:hidden">
               <EmployeeIntro />
             </div>
-            <div className="hidden lg:grid lg:grid-cols-[180px_minmax(0,1fr)_180px] xl:grid-cols-[200px_minmax(0,1fr)_200px] gap-6 items-start">
-              <PaddockRailLeft />
-              <div className="max-w-[520px] mx-auto w-full">
+
+            {/* Desktop: 5 clip thumbs left + employee video (2x size) + 5 clip thumbs right */}
+            <div className="hidden lg:grid lg:grid-cols-[1fr_2fr_1fr] gap-4 items-start">
+              <ClipRailLeft />
+              <div className="w-full">
                 <EmployeeIntro />
               </div>
+              <ClipRailRight />
+            </div>
+
+            {/* Desktop: paddock sponsor rails kept below for now */}
+            <div className="hidden lg:grid lg:grid-cols-[180px_minmax(0,1fr)_180px] xl:grid-cols-[200px_minmax(0,1fr)_200px] gap-6 items-start">
+              <PaddockRailLeft />
+              <div />
               <PaddockRailRight />
             </div>
           </section>
