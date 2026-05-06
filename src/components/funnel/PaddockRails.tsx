@@ -21,7 +21,7 @@ export const tools: Sponsor[] = [
   { name: "DeeVid AI", tagline: "Video toolkit", url: "https://deevid.ai" },
   { name: "Pika", tagline: "Pika 2.0", url: "https://pika.art" },
   { name: "Luma", tagline: "Dream Machine", url: "https://lumalabs.ai" },
-  { name: "Sora", tagline: "OpenAI video", url: "https://sora.com" },
+  { name: "Yapper", tagline: "AI dialogue", url: "https://yapper.so" },
   { name: "ElevenLabs", tagline: "Voice & audio", url: "https://elevenlabs.io" },
 ];
 
