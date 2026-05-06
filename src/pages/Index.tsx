@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import { Hero } from "@/components/funnel/Hero";
 import { Manifesto } from "@/components/funnel/Manifesto";
 import { EmployeeIntro } from "@/components/funnel/EmployeeIntro";
-import { PaddockRailLeft, PaddockRailRight } from "@/components/funnel/PaddockRails";
 import { ClipRailLeft, ClipRailRight } from "@/components/funnel/ClipRails";
 import { NowWatching } from "@/components/funnel/NowWatching";
 import { SubmissionForm } from "@/components/funnel/SubmissionForm";
