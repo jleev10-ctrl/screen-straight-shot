@@ -70,7 +70,7 @@ export const ClipRailLeft = () => (
   <aside aria-label="Paddock reels — engines" className="w-full">
     <RailHeader label="Engines" />
     <div className="space-y-2">
-      {engines.map((s, i) => <Tile key={s.name} sponsor={s} index={i} />)}
+      {engines.map((s) => <Tile key={s.name} sponsor={s} />)}
     </div>
     <RailFooter />
   </aside>
@@ -80,7 +80,7 @@ export const ClipRailRight = () => (
   <aside aria-label="Paddock reels — tools" className="w-full">
     <RailHeader label="Tools" />
     <div className="space-y-2">
-      {tools.map((s, i) => <Tile key={s.name} sponsor={s} index={i} />)}
+      {tools.map((s) => <Tile key={s.name} sponsor={s} />)}
     </div>
     <RailFooter />
   </aside>
