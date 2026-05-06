@@ -27,19 +27,6 @@ const Tile = ({ sponsor }: { sponsor: Sponsor }) => (
     )}
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
 
-  <a
-    href={sponsor.url}
-    target="_blank"
-    rel="noopener noreferrer sponsored"
-    className="group relative block w-full overflow-hidden rounded-md border border-primary/30 bg-black/60 aspect-video transition-all hover:border-primary hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.5)]"
-  >
-    <img
-      src={posterFor(sponsor, index)}
-      alt={`${sponsor.name} reel`}
-      loading="lazy"
-      className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
     {sponsor.titleSponsor && (
       <div className="absolute top-1 left-1 text-[8px] font-mono uppercase tracking-[0.15em] text-primary border border-primary/60 px-1 py-0.5 rounded-sm bg-black/70">
