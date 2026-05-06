@@ -5,6 +5,7 @@ export type Sponsor = {
   tagline?: string;
   url: string;
   titleSponsor?: boolean;
+  clip?: string; // optional looping mp4 thumbnail
 };
 
 // Left rail — the "Engines" (video / image generation models)
@@ -19,7 +20,7 @@ export const engines: Sponsor[] = [
 // Right rail — the "Tools" (post / audio / supporting craft)
 export const tools: Sponsor[] = [
   { name: "DeeVid AI", tagline: "Video toolkit", url: "https://deevid.ai" },
-  { name: "Pika", tagline: "Pika 2.0", url: "https://pika.art" },
+  { name: "Seedance", tagline: "ByteDance video", url: "https://seedance.com", clip: "/clips/seedance.mp4" },
   { name: "Luma", tagline: "Dream Machine", url: "https://lumalabs.ai" },
   { name: "Yapper", tagline: "AI dialogue", url: "https://yapper.so" },
   { name: "ElevenLabs", tagline: "Voice & audio", url: "https://elevenlabs.io" },
