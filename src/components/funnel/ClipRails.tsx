@@ -6,41 +6,45 @@ const Tile = ({ sponsor }: { sponsor: Sponsor }) => (
     href={sponsor.url}
     target="_blank"
     rel="noopener noreferrer sponsored"
-    className="group relative block w-full overflow-hidden rounded-md border border-primary/30 bg-black aspect-video transition-all hover:border-primary hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.5)]"
+    className="group relative block w-full min-h-36 overflow-hidden rounded-md border border-primary/30 bg-background aspect-video transition-all hover:border-primary hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.5)]"
   >
     {sponsor.clip ? (
       <video
-        src={sponsor.clip}
         autoPlay
         muted
+        defaultMuted
         loop
         playsInline
-        preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-      />
+        preload="auto"
+        poster={sponsor.poster}
+        aria-label={`${sponsor.name} sponsor reel`}
+        className="absolute inset-0 z-0 block h-full w-full object-cover opacity-100"
+      >
+        <source src={sponsor.clip} type="video/mp4" />
+      </video>
     ) : (
-      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary to-black">
+      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary to-background">
         <span className="text-base lg:text-lg font-black uppercase tracking-tight text-foreground/90 px-2 text-center leading-none">
           {sponsor.name}
         </span>
       </div>
     )}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+    <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/90 via-background/10 to-transparent pointer-events-none" />
 
 
     {sponsor.titleSponsor && (
-      <div className="absolute top-1 left-1 text-[8px] font-mono uppercase tracking-[0.15em] text-primary border border-primary/60 px-1 py-0.5 rounded-sm bg-black/70">
+      <div className="absolute top-1 left-1 z-20 text-[8px] font-mono uppercase tracking-[0.15em] text-primary border border-primary/60 px-1 py-0.5 rounded-sm bg-background/70">
         Title
       </div>
     )}
 
-    <div className="absolute inset-0 flex items-center justify-center">
+    <div className="absolute inset-0 z-20 flex items-center justify-center">
       <div className="rounded-full bg-primary/90 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
         <Play className="w-3 h-3 text-primary-foreground fill-current" />
       </div>
     </div>
 
-    <div className="absolute bottom-1 left-1.5 right-1.5">
+    <div className="absolute bottom-1 left-1.5 right-1.5 z-20">
       <p className="text-[11px] font-bold uppercase tracking-wide text-foreground leading-tight truncate">
         {sponsor.name}
       </p>
