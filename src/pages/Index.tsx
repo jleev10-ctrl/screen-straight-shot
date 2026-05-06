@@ -73,18 +73,14 @@ const Index = () => {
             id="bucket-6-murmur"
           />
 
-          {/* Bucket 7 — The Girl (EmployeeIntro + sponsor reels) */}
+          {/* Bucket 7 — The Girl (EmployeeIntro + sponsor reels) — grid-first, rails always flanking */}
           <section id="bucket-7-the-girl" className="scroll-mt-8">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-4 items-start">
-              <div className="order-3 lg:order-1">
-                <ClipRailLeft />
-              </div>
-              <div className="order-2 w-full">
+            <div className="grid grid-cols-[1fr_2fr_1fr] lg:grid-cols-[2fr_3fr_2fr] gap-2 sm:gap-3 lg:gap-4 items-start">
+              <ClipRailLeft />
+              <div className="w-full min-w-0">
                 <EmployeeIntro />
               </div>
-              <div className="order-1 lg:order-3">
-                <ClipRailRight />
-              </div>
+              <ClipRailRight />
             </div>
           </section>
 
