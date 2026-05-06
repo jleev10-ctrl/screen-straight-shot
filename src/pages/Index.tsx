@@ -73,20 +73,18 @@ const Index = () => {
             id="bucket-6-murmur"
           />
 
-          {/* Bucket 7 — The Girl (EmployeeIntro + desktop sponsor reels) */}
+          {/* Bucket 7 — The Girl (EmployeeIntro + sponsor reels) */}
           <section id="bucket-7-the-girl" className="scroll-mt-8">
-            {/* Mobile: just the video. */}
-            <div className="lg:hidden">
-              <EmployeeIntro />
-            </div>
-
-            {/* Desktop: 5 sponsor-reel thumbs left + employee video (2x) + 5 right */}
-            <div className="hidden lg:grid lg:grid-cols-[1fr_2fr_1fr] gap-4 items-start">
-              <ClipRailLeft />
-              <div className="w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-4 items-start">
+              <div className="order-3 lg:order-1">
+                <ClipRailLeft />
+              </div>
+              <div className="order-2 w-full">
                 <EmployeeIntro />
               </div>
-              <ClipRailRight />
+              <div className="order-1 lg:order-3">
+                <ClipRailRight />
+              </div>
             </div>
           </section>
 
