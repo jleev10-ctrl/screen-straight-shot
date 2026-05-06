@@ -12,11 +12,9 @@ const Tile = ({ sponsor }: { sponsor: Sponsor }) => (
       <video
         autoPlay
         muted
-        defaultMuted
         loop
         playsInline
         preload="auto"
-        poster={sponsor.poster}
         aria-label={`${sponsor.name} sponsor reel`}
         className="absolute inset-0 z-0 block h-full w-full object-cover opacity-100"
       >
