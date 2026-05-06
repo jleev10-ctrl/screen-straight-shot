@@ -6,7 +6,7 @@ const Tile = ({ sponsor }: { sponsor: Sponsor }) => (
     href={sponsor.url}
     target="_blank"
     rel="noopener noreferrer sponsored"
-    className="group relative block w-full min-h-36 overflow-hidden rounded-md border border-primary/30 bg-background aspect-video transition-all hover:border-primary hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.5)]"
+    className="group relative block w-full min-h-0 overflow-hidden rounded-md border border-primary/30 bg-background aspect-video transition-all hover:border-primary hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.5)]"
   >
     {sponsor.clip ? (
       <video
