@@ -1,12 +1,32 @@
 import { Play } from "lucide-react";
 import { engines, tools, type Sponsor } from "./PaddockRails";
 
-// Each clip is tied to a sponsor — same order, same link, same affiliate target.
-// Poster is a placeholder until real reels are dropped in.
-const posterFor = (s: Sponsor, i: number) =>
-  `https://picsum.photos/seed/${encodeURIComponent(s.name)}${i}/400/225`;
+const Tile = ({ sponsor }: { sponsor: Sponsor }) => (
+  <a
+    href={sponsor.url}
+    target="_blank"
+    rel="noopener noreferrer sponsored"
+    className="group relative block w-full overflow-hidden rounded-md border border-primary/30 bg-black aspect-video transition-all hover:border-primary hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.5)]"
+  >
+    {sponsor.clip ? (
+      <video
+        src={sponsor.clip}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+      />
+    ) : (
+      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary to-black">
+        <span className="text-base lg:text-lg font-black uppercase tracking-tight text-foreground/90 px-2 text-center leading-none">
+          {sponsor.name}
+        </span>
+      </div>
+    )}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
 
-const Tile = ({ sponsor, index }: { sponsor: Sponsor; index: number }) => (
   <a
     href={sponsor.url}
     target="_blank"
