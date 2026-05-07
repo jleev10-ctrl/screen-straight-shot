@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Hero } from "@/components/funnel/Hero";
 import { Manifesto } from "@/components/funnel/Manifesto";
 import { EmployeeIntro } from "@/components/funnel/EmployeeIntro";
-import { ClipRailLeft, ClipRailRight } from "@/components/funnel/ClipRails";
+
 import { PaddockRailLeft, PaddockRailRight } from "@/components/funnel/PaddockRails";
 import { NowWatching } from "@/components/funnel/NowWatching";
 import { SubmissionForm } from "@/components/funnel/SubmissionForm";
@@ -74,9 +74,8 @@ const Index = () => {
             id="bucket-6-murmur"
           />
 
-          {/* Bucket 7 — The Girl. Desktop: video rails. Mobile/tablet: text placeholders. */}
+          {/* Bucket 7 — The Girl. Text-only Paddock rails on all breakpoints. */}
           <section id="bucket-7-the-girl" className="scroll-mt-8">
-            {/* Mobile + tablet — single column, text-only rails as placeholders */}
             <div className="lg:hidden space-y-4">
               <EmployeeIntro />
               <div className="grid grid-cols-2 gap-3">
@@ -84,13 +83,12 @@ const Index = () => {
                 <PaddockRailRight />
               </div>
             </div>
-            {/* Desktop — full grid with MP4 rails, forced visible */}
-            <div className="hidden lg:grid lg:grid-cols-[2fr_3fr_2fr] gap-4 items-start">
-              <ClipRailLeft />
+            <div className="hidden lg:grid lg:grid-cols-[1fr_2fr_1fr] gap-4 items-start">
+              <PaddockRailLeft />
               <div className="w-full min-w-0">
                 <EmployeeIntro />
               </div>
-              <ClipRailRight />
+              <PaddockRailRight />
             </div>
           </section>
 
