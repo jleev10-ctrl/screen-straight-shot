@@ -57,7 +57,7 @@ export const NowWatching = () => {
           id="now-watching-heading"
           className="text-xs md:text-sm font-mono uppercase tracking-widest text-muted-foreground"
         >
-          Storage Locker Studios — Now Watching
+          Now Watching
         </h2>
         <span className="ml-auto inline-flex items-center gap-1.5 text-xs font-mono text-primary">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
