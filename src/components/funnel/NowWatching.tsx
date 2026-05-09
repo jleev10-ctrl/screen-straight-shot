@@ -5,9 +5,11 @@ export const NowWatching = () => {
     <section aria-labelledby="now-watching-heading" className="space-y-4">
       <h2
         id="now-watching-heading"
-        className="text-xs md:text-sm font-mono tracking-normal text-muted-foreground"
+        className="font-mono uppercase tracking-tight text-primary whitespace-nowrap text-center text-[clamp(0.6rem,2.2vw,1rem)]"
       >
-        <a href="https://higgsfield.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">storage locker studios &gt; now showing ...get it at higgsfield !!</a>
+        <a href="https://higgsfield.ai" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          STORAGE LOCKER STUDIOS... NOW SHOWING!!! GET IT HIGGSFIELD
+        </a>
       </h2>
 
       <Card className="p-3 md:p-4 bg-card/60 backdrop-blur border-border">
