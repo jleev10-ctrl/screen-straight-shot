@@ -577,16 +577,20 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 }
 .google-card-headline {
   color: #1a0dab;
-  font-size: clamp(9px, 2.85vw, 17px);
+  font-size: clamp(11px, 2.85vw, 17px);
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
   text-decoration: none;
   flex: 1 1 auto;
   min-width: 0;
+}
+.google-card-headline .hl-tail { display: none; }
+@media (min-width: 600px) {
+  .google-card-headline .hl-tail { display: inline; }
 }
 .now-watching-frame { position: relative; width: 100%; max-width: 400px; margin: 0 auto; aspect-ratio: 9 / 16; }
 .now-watching-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; }
