@@ -51,19 +51,20 @@ export const NowWatching = () => {
 
   return (
     <section aria-labelledby="now-watching-heading" className="space-y-4 !block" style={{ display: 'block' }}>
-      <div className="flex items-center gap-2">
-        <Tv className="w-4 h-4 text-primary" />
-        <h2
-          id="now-watching-heading"
-          className="text-xs md:text-sm font-mono uppercase tracking-widest text-muted-foreground"
+      <h2
+        id="now-watching-heading"
+        className="text-xs md:text-sm font-mono uppercase tracking-widest text-muted-foreground"
+      >
+        Storage Locker Studios &gt; Now Showing &middot;{" "}
+        <a
+          href="https://higgsfield.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline normal-case tracking-normal"
         >
-          Now Watching
-        </h2>
-        <span className="ml-auto inline-flex items-center gap-1.5 text-xs font-mono text-primary">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          LIVE
-        </span>
-      </div>
+          Get it at Higgsfield
+        </a>
+      </h2>
 
       {false ? (
         <Card className="p-5 md:p-6 bg-card/60 backdrop-blur border-border space-y-3">
