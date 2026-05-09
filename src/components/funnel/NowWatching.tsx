@@ -5,7 +5,7 @@ export const NowWatching = () => {
     <section aria-labelledby="now-watching-heading" className="space-y-4">
       <h2
         id="now-watching-heading"
-        className="font-mono uppercase tracking-tight text-primary whitespace-nowrap text-center text-[clamp(0.6rem,2.2vw,1rem)]"
+        className="font-mono uppercase tracking-normal text-primary whitespace-nowrap text-center text-[clamp(0.52rem,2vw,0.95rem)] leading-none"
       >
         <a href="https://higgsfield.ai" target="_blank" rel="noopener noreferrer" className="hover:underline">
           STORAGE LOCKER STUDIOS... NOW SHOWING!!! GET IT HIGGSFIELD

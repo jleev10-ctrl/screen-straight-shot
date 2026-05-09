@@ -565,6 +565,7 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
   align-items: center;
   gap: 6px;
   margin-bottom: 2px;
+  min-width: 0;
 }
 .google-card-favicon {
   width: 16px; height: 16px;
@@ -575,6 +576,16 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 }
 .google-card-domain { color: #202124; font-size: 14px; }
 .google-card-path { color: #5f6368; font-size: 14px; }
+.google-card-headline {
+  color: #1a0dab;
+  font-size: clamp(10px, 1.85vw, 20px);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  text-decoration: none;
+}
 .google-card-title {
   font-size: 20px;
   color: #1a0dab;
@@ -1202,12 +1213,10 @@ footer { background: var(--bg-panel); border-top: 1px solid var(--border); paddi
 <div class="google-preview-wrap">
   <div class="google-preview-label">// Google Search Preview</div>
   <div class="google-card">
-    <div class="google-card-url">
+    <div class="google-card-url" aria-label="Now showing at Higgsfield">
       <div class="google-card-favicon">SL</div>
-      <span class="google-card-domain">STORAGELOCKERSTUDIOS</span>
-      <span class="google-card-path"> › NOW SHOWING IN THE ARENA</span>
+      <a class="google-card-headline" href="https://higgsfield.ai/" target="_blank" rel="noopener">STORAGE LOCKER STUDIOS... NOW SHOWING!!! GET IT HIGGSFIELD</a>
     </div>
-    <a class="google-card-title" href="https://higgsfield.ai/" target="_blank" rel="noopener" style="display:block;text-decoration:none;">storage locker studios &gt; now showing ...get it at higgsfield !!</a>
     <div class="now-watching-frame">
       <iframe src="https://www.youtube.com/embed/zFGXNoDWXCY" title="Now Watching" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
