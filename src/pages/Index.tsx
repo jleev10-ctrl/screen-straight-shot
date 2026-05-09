@@ -30,6 +30,7 @@ const Index = () => {
         <link rel="canonical" href="/" />
       </Helmet>
 
+      <StatsButton />
       <main className="min-h-screen bg-hero">
         {/* Bucket 1 — Sign-In (Storage Locker gatekeeper) */}
         <BucketPlaceholder
