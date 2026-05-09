@@ -10,10 +10,13 @@ import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 import { Footer } from "@/components/funnel/Footer";
 import { BucketPlaceholder } from "@/components/funnel/BucketPlaceholder";
+import { StatsButton } from "@/components/funnel/StatsButton";
+import { trackEvent } from "@/lib/analytics";
 
 const Index = () => {
   useEffect(() => {
     document.title = "Tap Movie Engine — Making Movies";
+    trackEvent("visit");
   }, []);
 
   return (
@@ -27,6 +30,7 @@ const Index = () => {
         <link rel="canonical" href="/" />
       </Helmet>
 
+      <StatsButton />
       <main className="min-h-screen bg-hero">
         {/* Bucket 1 — Sign-In (Storage Locker gatekeeper) */}
         <BucketPlaceholder
