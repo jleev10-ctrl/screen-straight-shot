@@ -42,7 +42,7 @@ export const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => document.getElementById("manifesto")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={scrollToManifesto}
             >
               Read the manifesto
               <ArrowDown className="w-4 h-4" />
