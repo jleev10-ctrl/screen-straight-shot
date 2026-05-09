@@ -7,16 +7,7 @@ export const NowWatching = () => {
         id="now-watching-heading"
         className="text-xs md:text-sm font-mono tracking-normal text-muted-foreground"
       >
-        storage locker studios &gt; now showing ...
-        <a
-          href="https://higgsfield.ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
-        >
-          get it at higgsfield
-        </a>
-        {" !!"}
+        <a href="https://higgsfield.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">storage locker studios &gt; now showing ...get it at higgsfield !!</a>
       </h2>
 
       <Card className="p-3 md:p-4 bg-card/60 backdrop-blur border-border">
