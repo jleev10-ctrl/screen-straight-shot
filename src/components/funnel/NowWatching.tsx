@@ -55,7 +55,7 @@ export const NowWatching = () => {
         id="now-watching-heading"
         className="text-xs md:text-sm font-mono uppercase tracking-widest text-muted-foreground"
       >
-        Storage Locker Studios &gt; Now Showing &middot;{" "}
+        Storage Locker Studios ... Now Showing ...{" "}
         <a
           href="https://higgsfield.ai"
           target="_blank"
