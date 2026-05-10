@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import HomeOverlay from "./pages/HomeOverlay.tsx";
+import { ClickTracker } from "./components/ClickTracker";
 import ThankYou from "./pages/ThankYou.tsx";
 import Auth from "./pages/Auth.tsx";
 import Admin from "./pages/Admin.tsx";
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ClickTracker />
         <Routes>
           <Route path="/" element={<HomeOverlay />} />
           <Route path="/thank-you" element={<ThankYou />} />
