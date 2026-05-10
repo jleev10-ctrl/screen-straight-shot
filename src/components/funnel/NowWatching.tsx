@@ -15,9 +15,10 @@ export const NowWatching = () => {
       <Card className="p-3 md:p-4 bg-card/60 backdrop-blur border-border">
         <div className="relative w-full mx-auto max-w-[400px] md:max-w-none md:h-[100vh] md:aspect-auto" style={{ aspectRatio: "9 / 16" }}>
           <iframe
-            src="https://www.youtube.com/embed/zFGXNoDWXCY"
+            src="https://www.youtube-nocookie.com/embed/zFGXNoDWXCY?vq=hd1080&hd=1&rel=0&modestbranding=1"
             title="Now Watching"
             className="absolute inset-0 w-full h-full rounded-md"
+            loading="eager"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
