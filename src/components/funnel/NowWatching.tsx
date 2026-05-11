@@ -33,7 +33,7 @@ export const NowWatching = () => {
               type="button"
               aria-label="Play Now Showing"
               onClick={() => setIsPlaying(true)}
-              className="group absolute inset-0 overflow-hidden rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group absolute inset-0 z-10 overflow-hidden rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <span className="absolute inset-0 bg-background/10 transition-colors group-hover:bg-background/20" />
               <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-primary/70 bg-card/80 text-primary shadow-glow backdrop-blur-sm transition-transform group-hover:scale-105 md:h-20 md:w-20">
