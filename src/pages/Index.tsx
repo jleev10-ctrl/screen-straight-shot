@@ -6,7 +6,7 @@ import { EmployeeIntro } from "@/components/funnel/EmployeeIntro";
 
 import { PaddockRailLeft, PaddockRailRight } from "@/components/funnel/PaddockRails";
 import { NowWatching } from "@/components/funnel/NowWatching";
-import { ComingSoon } from "@/components/funnel/ComingSoon";
+import { NowWatchingTweet } from "@/components/funnel/NowWatchingTweet";
 import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 import { Footer } from "@/components/funnel/Footer";
@@ -132,9 +132,12 @@ const Index = () => {
             <NowWatching />
           </section>
 
-          {/* Bucket 11b — Coming Soon (placeholder) */}
-          <section id="bucket-11b-coming-soon">
-            <ComingSoon />
+          {/* Bucket 11b — Now Showing (tweet) */}
+          <section id="bucket-11b-now-watching-tweet">
+            <NowWatchingTweet
+              tweetUrl="https://x.com/pabloprompt/status/2055726656287871478"
+              headingHref="https://x.com/pabloprompt/status/2055726656287871478"
+            />
           </section>
 
           {/* Google Search Preview (supporting visual) */}
