@@ -1,4 +1,11 @@
+import { useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
+
+declare global {
+  interface Window {
+    twttr?: { widgets?: { load: (element?: HTMLElement | null) => void } };
+  }
+}
 
 interface NowWatchingTweetProps {
   /** Full tweet URL, e.g. https://x.com/pabloprompt/status/2055726656287871478 */
@@ -16,17 +23,32 @@ export const NowWatchingTweet = ({
   headingHref,
   framed = true,
 }: NowWatchingTweetProps) => {
-  const src = `https://twitframe.com/show?url=${encodeURIComponent(tweetUrl)}`;
+  const embedRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scriptSrc = "https://platform.twitter.com/widgets.js";
+    const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${scriptSrc}"]`);
+
+    if (existingScript) {
+      window.twttr?.widgets?.load(embedRef.current);
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = scriptSrc;
+    script.async = true;
+    script.onload = () => window.twttr?.widgets?.load(embedRef.current);
+    document.body.appendChild(script);
+  }, [tweetUrl]);
+
   const tweetFrame = (
-    <div className="relative mx-auto aspect-[9/16] w-full max-w-[400px] overflow-hidden rounded-md bg-background md:max-w-[430px]">
-      <iframe
-        src={src}
-        title="Now Watching — Tweet"
-        className="absolute inset-0 h-full w-full"
-        loading="lazy"
-        allow="autoplay; encrypted-media; picture-in-picture; web-share"
-        allowFullScreen
-      />
+    <div ref={embedRef} className="mx-auto min-h-[260px] w-full max-w-[430px] overflow-hidden rounded-md border border-border bg-background p-3">
+      <blockquote className="twitter-tweet" data-theme="dark" data-dnt="true">
+        <a href={tweetUrl}>View tweet</a>
+      </blockquote>
+      <a href={tweetUrl} target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-normal text-primary hover:underline">
+        Open tweet on X
+      </a>
     </div>
   );
 
