@@ -6,7 +6,6 @@ import { EmployeeIntro } from "@/components/funnel/EmployeeIntro";
 
 import { PaddockRailLeft, PaddockRailRight } from "@/components/funnel/PaddockRails";
 import { NowWatching } from "@/components/funnel/NowWatching";
-import { NowWatchingTweet } from "@/components/funnel/NowWatchingTweet";
 import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 import { Footer } from "@/components/funnel/Footer";
@@ -14,6 +13,8 @@ import { BucketPlaceholder } from "@/components/funnel/BucketPlaceholder";
 import { Card } from "@/components/ui/card";
 import { StatsButton } from "@/components/funnel/StatsButton";
 import { trackEvent } from "@/lib/analytics";
+
+const NOW_SHOWING_REPEAT = Array.from({ length: 30 }, () => "NOW").join(" ");
 
 const Index = () => {
   useEffect(() => {
@@ -142,7 +143,7 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                STORAGE LOCKER STUDIOS... NOW SHOWING ON X!!!
+                STORAGE LOCKER STUDIOS... {NOW_SHOWING_REPEAT} SHOWING ON X!!!
               </a>
             </h2>
             <Card className="p-6 md:p-8 bg-card/60 backdrop-blur border-border text-center">
