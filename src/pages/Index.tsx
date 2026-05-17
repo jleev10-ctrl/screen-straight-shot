@@ -128,12 +128,14 @@ const Index = () => {
           />
 
           {/* Bucket 11 — Now Watching */}
-          <section id="bucket-11-now-watching" className="space-y-8">
-            <NowWatching />
-            <NowWatchingTweet
-              tweetUrl="https://x.com/pabloprompt/status/2055726656287871478"
-              headingHref="https://x.com/pabloprompt/status/2055726656287871478"
-            />
+          <section id="bucket-11-now-watching">
+            <NowWatching>
+              <NowWatchingTweet
+                tweetUrl="https://x.com/pabloprompt/status/2055726656287871478"
+                headingHref="https://x.com/pabloprompt/status/2055726656287871478"
+                framed={false}
+              />
+            </NowWatching>
           </section>
 
           {/* Google Search Preview (supporting visual) */}

@@ -1,6 +1,10 @@
 import { Card } from "@/components/ui/card";
 
-export const NowWatching = () => {
+interface NowWatchingProps {
+  children?: React.ReactNode;
+}
+
+export const NowWatching = ({ children }: NowWatchingProps) => {
   return (
     <section aria-labelledby="now-watching-heading" className="space-y-4">
       <h2
@@ -12,7 +16,7 @@ export const NowWatching = () => {
         </a>
       </h2>
 
-      <Card className="p-3 md:p-4 bg-card/60 backdrop-blur border-border">
+      <Card className="p-3 md:p-4 bg-card/60 backdrop-blur border-border space-y-4">
         <div className="relative mx-auto aspect-[9/16] w-full max-w-[400px] overflow-hidden rounded-md bg-background md:max-w-[430px]">
           <iframe
             src="https://www.youtube-nocookie.com/embed/zFGXNoDWXCY?playsinline=1&rel=0&modestbranding=1"
@@ -23,6 +27,7 @@ export const NowWatching = () => {
             allowFullScreen
           />
         </div>
+        {children}
       </Card>
     </section>
   );
