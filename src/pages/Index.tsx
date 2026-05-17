@@ -11,6 +11,7 @@ import { SubmissionForm } from "@/components/funnel/SubmissionForm";
 import { GoogleSearchPreview } from "@/components/funnel/GoogleSearchPreview";
 import { Footer } from "@/components/funnel/Footer";
 import { BucketPlaceholder } from "@/components/funnel/BucketPlaceholder";
+import { Card } from "@/components/ui/card";
 import { StatsButton } from "@/components/funnel/StatsButton";
 import { trackEvent } from "@/lib/analytics";
 
