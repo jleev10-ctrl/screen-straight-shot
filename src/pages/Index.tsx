@@ -128,19 +128,32 @@ const Index = () => {
           />
 
           {/* Bucket 11 — Now Watching */}
-          <section id="bucket-11-now-watching" className="space-y-8">
+          <section id="bucket-11-now-watching">
             <NowWatching />
-            <NowWatchingTweet
-              tweetUrl="https://x.com/pabloprompt/status/2055726656287871478"
-              headingHref="https://x.com/pabloprompt/status/2055726656287871478"
-            />
-            {false && (
-              <NowWatchingTweet
-                tweetUrl="https://x.com/pabloprompt/status/2055726656287871478"
-                headingHref="https://x.com/pabloprompt/status/2055726656287871478"
-                framed={false}
-              />
-            )}
+          </section>
+
+          {/* Bucket 11b — Now Showing tweet */}
+          <section id="bucket-11b-now-showing-tweet" className="space-y-4">
+            <h2 className="font-mono uppercase tracking-normal text-primary text-center text-[clamp(0.52rem,2vw,0.95rem)] leading-none">
+              <a
+                href="https://x.com/pabloprompt/status/2055726656287871478"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                STORAGE LOCKER STUDIOS... NOW SHOWING ON X!!!
+              </a>
+            </h2>
+            <Card className="p-6 md:p-8 bg-card/60 backdrop-blur border-border text-center">
+              <a
+                href="https://x.com/pabloprompt/status/2055726656287871478"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-mono text-sm md:text-base uppercase tracking-wider text-primary hover:underline"
+              >
+                → Open tweet by @pabloprompt on X
+              </a>
+            </Card>
           </section>
 
           {/* Google Search Preview (supporting visual) */}
